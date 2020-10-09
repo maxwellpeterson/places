@@ -22,21 +22,15 @@ How it works...
 
 ### Setup
 
-1. Use npm to install the [Expo CLI](https://expo.io/)
-
-    `npm install -g expo-cli`
+1. Use npm to install the [Expo CLI](https://expo.io/) with `npm install -g expo-cli`
 
 2. Download the Expo client app for iOS or Android
 
-3. Clone the repository
-
-    `git clone https://github.com/maxwellpeterson/places.git`
+3. Clone the repository with `git clone https://github.com/maxwellpeterson/places.git`
 
 ### Development
 
-1. Start the Expo server from the project directory
-
-    `expo start`
+1. Start the Expo server from the project directory with `expo start`
 
 2. Connect to the Expo client app using your Expo account or the generated QR code
 
