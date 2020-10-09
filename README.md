@@ -14,9 +14,9 @@ How it works...
 
 ### Requirements
 
-1. [Node 12 LTS](https://nodejs.org/en/download/) or later
+1. [Git](https://git-scm.com/)
 
-2. [Git](https://git-scm.com/)
+2. [Node 12 LTS](https://nodejs.org/en/download/) or later
 
 3. [Watchman](https://facebook.github.io/watchman/docs/install#buildinstall) for macOS users
 
@@ -24,19 +24,19 @@ How it works...
 
 1. Use npm to install the [Expo CLI](https://expo.io/)
 
-  `npm install -g expo-cli`
+    `npm install -g expo-cli`
 
 2. Download the Expo client app for iOS or Android
 
 3. Clone the repository
 
-  `git clone https://github.com/maxwellpeterson/places.git`
+    `git clone https://github.com/maxwellpeterson/places.git`
 
 ### Development
 
 1. Start the Expo server from the project directory
 
-  `expo start`
+    `expo start`
 
 2. Connect to the Expo client app using your Expo account or the generated QR code
 
