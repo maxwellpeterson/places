@@ -24,9 +24,11 @@ How it works...
 
 1. Install the [Expo CLI](https://expo.io/) with `npm install -g expo-cli`
 
-2. Download the Expo client app for iOS or Android
+2. Download the Expo client app for iOS or Android on your mobile device
 
-3. Clone the repository and install dependencies with `npm install`
+3. Clone the repository with `git clone https://github.com/maxwellpeterson/places.git`
+
+4. Navigate to the project directory and install dependencies with `npm install`
 
 ### Development
 
