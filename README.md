@@ -2,7 +2,7 @@
 
 Appreciating the small features of the places we live that make them special to us.
 
-Developed by Max Peterson, Belle Lim, and Jueun Kang, with the support of Arun Jeevanantham and [Oasis](https://www.oasisneu.com/).
+Developed by Max Peterson, Belle Lim, and Jueun Kang, with support from Arun Jeevanantham and [Oasis](https://www.oasisneu.com/).
 
 ## Motivation
 
