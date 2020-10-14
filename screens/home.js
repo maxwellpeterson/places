@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { Text } from 'react-native';
+import ScreenContainer from '../styles/screen-container';
+import Map from '../components/map';
 
 const markers = [
   {
@@ -48,6 +50,8 @@ const markers = [
 
 export default function Home() {
   return(
-
+    <ScreenContainer>
+      <Text>This is some text from the home screen.</Text>
+    </ScreenContainer>
   );
 }
