@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
 import ScreenContainer from '../styles/screen-container';
 import Map from '../components/map';
 
@@ -51,7 +50,7 @@ const markers = [
 export default function Home() {
   return(
     <ScreenContainer>
-      <Text>This is some text from the home screen.</Text>
+      <Map markers={markers} />
     </ScreenContainer>
   );
 }

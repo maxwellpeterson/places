@@ -5,12 +5,14 @@ import { Marker } from 'react-native-maps';
 import styled from 'styled-components';
 
 const StyledMapView = styled(MapView)`
-  flex: 1;
+  
 `
+
+// Need to figure out how to control the size of the map, not sure if it can be styled like a normal view
 
 export default function Map({ markers }) {
   return(
-    <StyledMapView>
+    <MapView style={{...StyleSheet.absoluteFillObject}}>
       {markers.map((marker) => (
           <Marker
             key={marker.title}
@@ -18,12 +20,6 @@ export default function Map({ markers }) {
             title={marker.title}
           />
         ))}
-    </StyledMapView>
+    </MapView>
   );
 }
-
-const styles = StyleSheet.create({
-  mapStyle: {
-    flex: 1,
-  },
-});
