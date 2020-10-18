@@ -15,6 +15,7 @@ web-build
 .DS_Store
 
 # other stuff
+.vscode
 package.json
 package-lock.json
 LICENSE
