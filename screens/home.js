@@ -1,6 +1,13 @@
-import React from 'react';
-import ScreenContainer from '../styles/screen-container';
-import Map from '../components/map';
+import React from "react"
+import styled from "styled-components/native"
+import Map from "../components/map"
+
+const MapContainer = styled.View`
+  flex: 1;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+`
 
 const markers = [
   {
@@ -33,8 +40,8 @@ const markers = [
   },
   {
     latlng: {
-      latitude: 37.744830,
-      longitude: -122.436610,
+      latitude: 37.74483,
+      longitude: -122.43661,
     },
     title: "Noe Valley",
   },
@@ -48,9 +55,9 @@ const markers = [
 ]
 
 export default function Home() {
-  return(
-    <ScreenContainer>
+  return (
+    <MapContainer>
       <Map markers={markers} />
-    </ScreenContainer>
-  );
+    </MapContainer>
+  )
 }
