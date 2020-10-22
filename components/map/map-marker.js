@@ -12,6 +12,7 @@ const CalloutTitle = styled.Text`
   font-weight: bold;
 `
 
+// Note that complex border styling only works for View components (not Text): https://stackoverflow.com/a/51962817
 const TitleWrapper = styled.View`
   padding-bottom: 3px;
 `
