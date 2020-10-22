@@ -5,42 +5,48 @@
         "latitude": 37.849269,
         "longitude": -122.486808
       },
-      "title": "Sausalito"
+      "title": "Sausalito",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum, ex et luctus pharetra, nulla ante interdum tellus, aliquam rhoncus metus risus at enim."
     },
     {
       "latlng": {
         "latitude": 37.761822,
         "longitude": -122.448151
       },
-      "title": "Cole Valley"
+      "title": "Cole Valley",
+      "description": "Nullam a nunc quis justo sodales auctor. Nullam vehicula lectus sem, sed consequat nisi cursus ac. Aliquam tristique rhoncus sagittis."
     },
     {
       "latlng": {
         "latitude": 38.374196,
         "longitude": -122.599046
       },
-      "title": "Bennet Valley"
+      "title": "Bennet Valley",
+      "description": "Phasellus euismod tellus vel massa feugiat, sit amet posuere massa aliquet. In hac habitasse platea dictumst. Aliquam dolor dolor, porta eu diam ac, vulputate fringilla mi."
     },
     {
       "latlng": {
         "latitude": 37.7822232,
         "longitude": -122.3928787
       },
-      "title": "South Park"
+      "title": "South Park",
+      "description": "Fusce nec leo nunc. Cras pulvinar non ipsum ac varius. Vivamus eros sem, feugiat tincidunt lectus vel, porta dignissim ipsum."
     },
     {
       "latlng": {
         "latitude": 37.74483,
         "longitude": -122.43661
       },
-      "title": "Noe Valley"
+      "title": "Noe Valley",
+      "description": "Quisque blandit auctor libero. Donec dapibus mi quis felis feugiat pharetra. "
     },
     {
       "latlng": {
         "latitude": 37.908065,
         "longitude": -122.666629
       },
-      "title": "Stinson"
+      "title": "Stinson",
+      "description": "Donec dapibus volutpat ante, ut aliquam urna. Donec eu lacus accumsan, finibus mauris non, pulvinar enim."
     }
   ]
 }
