@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components/native"
-import Map from "../components/map"
-import MapMenuButton from "../components/map_menu_button"
-import { markers } from "../test_data/home/markers"
+import MapPanel from "../components/map/map-panel"
+import MenuButton from "../components/home/menu-button"
+import { markers } from "../test-data/home/map-markers"
 
 const MapContainer = styled.View`
   flex: 1;
@@ -13,8 +13,8 @@ const MapContainer = styled.View`
 export default function Home() {
   return (
     <MapContainer>
-      <Map markers={markers} />
-      <MapMenuButton />
+      <MapPanel markers={markers} />
+      <MenuButton />
     </MapContainer>
   )
 }

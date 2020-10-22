@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Button } from "react-native"
+import { Button } from "react-native"
 import styled from "styled-components/native"
 
 const ButtonContainer = styled.View`
@@ -8,7 +8,7 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function MapMenuButton() {
+export default function MenuButton() {
   return (
     <ButtonContainer>
       <Button title={"Menu"} onPress={() => alert("You Opened the Menu!")} />
