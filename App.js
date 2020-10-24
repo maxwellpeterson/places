@@ -2,6 +2,7 @@ import React from "react"
 import { Text } from "react-native"
 import styled from "styled-components/native"
 import { StatusBar } from "expo-status-bar"
+import PlacePage from "./screens/place"
 
 const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
@@ -10,7 +11,6 @@ const StyledSafeAreaView = styled.SafeAreaView`
 export default function App() {
   return (
     <StyledSafeAreaView>
-      <Text>Replace this text component with your screen component!</Text>
       <StatusBar style="auto" />
     </StyledSafeAreaView>
   )
