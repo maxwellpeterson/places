@@ -1,7 +1,7 @@
 import React from "react"
 import { Text, Dimensions } from "react-native"
 import { Marker, Callout } from "react-native-maps"
-import styled from "styled-components"
+import styled from "styled-components/native"
 
 const CalloutContainer = styled.View`
   max-width: ${Dimensions.get("window").width / 2}px;

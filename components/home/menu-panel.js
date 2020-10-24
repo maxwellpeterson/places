@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled from "styled-components/native"
 import MenuItem from "./menu-item"
 
 // Apply box shadow, possibly some transparency and background blur as well

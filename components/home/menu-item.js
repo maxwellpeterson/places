@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Switch } from "react-native"
-import styled from "styled-components"
+import styled from "styled-components/native"
 
 const ItemContainer = styled.View`
   padding-bottom: 10px;
