@@ -1,6 +1,6 @@
 import React from "react"
-import { Text, View } from "react-native"
 import styled from "styled-components"
+import MenuItem from "./menu-item"
 
 // Apply box shadow, possibly some transparency and background blur as well
 const MenuContainer = styled.View`
@@ -12,21 +12,26 @@ const MenuContainer = styled.View`
 `
 
 const MenuTitle = styled.Text`
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
 `
 
 const TitleContainer = styled.View`
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   border-bottom-width: 1px;
+  border-bottom-color: #ccc;
+  margin-bottom: 10px;
 `
 
 export default function MenuPanel() {
   return (
     <MenuContainer>
       <TitleContainer>
-        <MenuTitle>Toggle Layers</MenuTitle>
+        <MenuTitle>Filter Places</MenuTitle>
       </TitleContainer>
+      <MenuItem label={"People I Follow"} />
+      <MenuItem label={"People From San Francisco"} />
+      <MenuItem label={"People From Home"} />
     </MenuContainer>
   )
 }
