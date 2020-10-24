@@ -1,0 +1,22 @@
+{
+	"articles" : [
+		{
+			"user": "Max",
+			"date": "2 days ago",
+			"category": "Family",
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		},
+		{
+			"user": "Juene",
+			"date": "1 week ago",
+			"category": "Nature",
+			"body": "Eu volutpat odio facilisis mauris sit amet massa vitae. Odio pellentesque diam volutpat commodo. Diam sit amet nisl suscipit adipiscing. Tincidunt eget nullam non nisi est. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Urna condimentum mattis pellentesque id. Dictum non consectetur a erat nam. Ultricies leo integer malesuada nunc vel risus commodo. Massa massa ultricies mi quis hendrerit dolor."
+		},
+		{
+			"user": "Belle",
+			"date": "1 week ago",
+			"category": "Ghost",
+			"body": "Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Pharetra sit amet aliquam id diam. Arcu non sodales neque sodales ut etiam sit. Malesuada fames ac turpis egestas maecenas. Id eu nisl nunc mi ipsum faucibus vitae. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Eget velit aliquet sagittis id consectetur purus ut."
+		}
+	]
+}
