@@ -7,28 +7,27 @@ import AllArticles from "../components/places-page/all-articles"
 import { articles } from "../test-data/articles"
 
 const Title = styled.Text`
-  font-size: 36px;
+  font-size: 20px;
 `
 const PageHeader = styled.View`
   display: flex;
-  height: 30px;
+  height: 100px;
   flex-direction: row;
-  align-content: space-between;
+  justify-content: space-between;
 `
 const SectionContainer = styled.View`
   flex: 1;
   align-content: center;
-  height: 200px;
+  height: 800px;
 `
 export default function PlacePage() {
   return (
     <SectionContainer>
       <PageHeader>
         <BackButton />
-        <Title> Place! </Title>
+        <Title> Place </Title>
         <NewButton />
       </PageHeader>
-
       <AllArticles articles={articles} />
     </SectionContainer>
   )
