@@ -1,29 +1,24 @@
 import React, { useState } from "react"
-import { Switch } from "react-native"
+import { Pressable } from "react-native"
 import styled from "styled-components/native"
+import RadioButton from "./radio-button"
 
 const ItemContainer = styled.View`
-  padding-bottom: 10px;
-  border-bottom-width: 1px;
-  border-bottom-color: #ccc;
-  margin-bottom: 10px;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 `
 
 const ItemLabel = styled.Text`
-  font-size: 18px;
+  font-size: 24px;
 `
 
-export default function MenuItem({ label }) {
-  const [isEnabled, setIsEnabled] = useState(false)
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState)
-
+export default function MenuItem({ text, color, isSelected, onPress }) {
   return (
-    <ItemContainer>
-      <ItemLabel>{label}</ItemLabel>
-      <Switch onValueChange={toggleSwitch} value={isEnabled} />
-    </ItemContainer>
+    <Pressable onPress={onPress}>
+      <ItemContainer>
+        <RadioButton color={color} isSelected={isSelected} />
+        <ItemLabel>{text}</ItemLabel>
+      </ItemContainer>
+    </Pressable>
   )
 }
