@@ -1,8 +1,11 @@
 import React from "react"
+import { Dimensions } from "react-native"
 import styled from "styled-components/native"
 
+const windowWidth = Dimensions.get("window").width
+
 const ScreenContainer = styled.View`
-  padding: 14px 0px 0px 60px;
+  padding: 14px 0px 0px ${windowWidth / 9}px;
 `
 const HeaderText = styled.Text`
   font-size: 25px;

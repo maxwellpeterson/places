@@ -9,19 +9,20 @@ const CustomButton = (props) => (
 
 const ScreenContainer = styled.View`
   padding: 14px;
+  align-self: center;
 `
 
 const ButtonContainer = styled.TouchableOpacity`
-	width: 75px;
-	height: 32px
+	width: 76px;
+	height: 29px
 	padding: 12px;
-	border-radius: 8px;	
-  background-color: 'rgb(211, 211, 211)';
+	border-radius: 10px;
+  border: 2px solid #d2c26c;
 `
 
 const ButtonText = styled.Text`
-  font-size: 13px;
-  margin: -3px;
+  font-size: 12px;
+  margin: -7px;
   color: ${(props) => props.textColor};
   text-align: center;
 `
@@ -29,9 +30,9 @@ export default function FollowButton() {
   return (
     <ScreenContainer>
       <CustomButton
-        text="FOLLOW"
-        textColor="#fff"
-        backgroundColor="rgb(211, 211, 211)"
+        text="follow"
+        textColor="#d2c26c"
+        backgroundColor="rgb(256, 256, 256)"
       />
     </ScreenContainer>
   )
