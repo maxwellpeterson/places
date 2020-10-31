@@ -28,7 +28,7 @@ const BioContainer = styled.View`
 
 const BioText = styled.Text`
   font-size: 13px;
-  padding: 10px 8px 0px 0px;
+  padding: 5px 8px 0px 0px;
 `
 
 const ColumnLayout = styled.View`
