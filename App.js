@@ -9,6 +9,11 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native"
+import BackButton from "./components/backbutton"
+import UsernameText from "./components/username"
+import ProfilePage from "./screens/profile"
+import styled from "styled-components/native"
+import ProfilePicture from "./components/profilepicture"
 
 const FollowButton = ({ onPress, title }) => (
   <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
@@ -16,62 +21,21 @@ const FollowButton = ({ onPress, title }) => (
   </TouchableOpacity>
 )
 
-const BackButton = ({ onPress, title }) => (
-  <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
-    <Text style={styles.buttonText}>{title}</Text>
-  </TouchableOpacity>
-)
+const Row = styled.View`
+  display: flex;
+  flex-direction: row;
+`
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <View style={styles.backButtonScreenContainer}>
-              <BackButton title="back" size="sm" />
-            </View>
-
-            <Text style={styles.headerText}>username</Text>
-          </View>
-
-          <View style={{ flexDirection: "row", alignItems: "flexDirection" }}>
-            <View style={styles.imageContainer}>
-              <Image
-                style={styles.profilePicture}
-                source={{
-                  uri:
-                    "https://i.pinimg.com/474x/4c/3e/3b/4c3e3b91f05a5765aa544ac7557d6642.jpg",
-                }}
-              />
-            </View>
-
-            <View style={{ flexDirection: "column", flex: 1 }}>
-              <Text style={styles.profileName}>jueun kang</Text>
-              <Text>
-                <Text style={styles.textNumber}>37</Text> <Text>Places</Text>
-              </Text>
-              <Text>
-                <Text style={styles.textNumber}>7</Text> <Text>Cities</Text>
-              </Text>
-            </View>
-
-            <View style={{ flex: 1, height: 30, position: "relative" }}>
-              <FollowButton title="follow" size="sm" />
-            </View>
-          </View>
-
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <Text style={styles.profileBioText}>add a bio here</Text>
-            <View style={styles.buttonScreenContainer}>
-              <FollowButton title="follow" size="sm" />
-            </View>
-          </View>
-        </View>
+        <Row>
+          <BackButton></BackButton>
+          <UsernameText></UsernameText>
+        </Row>
+        <ProfilePicture></ProfilePicture>
+        <FollowButton></FollowButton>
       </ScrollView>
     </SafeAreaView>
   )
@@ -90,7 +54,6 @@ const styles = StyleSheet.create({
   },
   backButtonScreenContainer: {
     flex: 1,
-    alignSelf: "flex-end",
     justifyContent: "flex-start",
     padding: 14,
   },
@@ -109,11 +72,18 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     textTransform: "uppercase",
   },
+  followButtonContainer: {
+    flex: 1,
+    height: 30,
+    position: "relative",
+    alignSelf: "center",
+  },
   headerText: {
     fontSize: 25,
     fontWeight: "bold",
-    padding: 12,
+    paddingRight: 160,
     alignSelf: "center",
+    alignContent: "center",
   },
   profileName: {
     fontWeight: "bold",

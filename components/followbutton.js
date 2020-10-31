@@ -25,11 +25,11 @@ const ButtonText = styled.Text`
   color: ${(props) => props.textColor};
   text-align: center;
 `
-export default function BackButton() {
+export default function FollowButton() {
   return (
     <ScreenContainer>
       <CustomButton
-        text="BACK"
+        text="FOLLOW"
         textColor="#fff"
         backgroundColor="rgb(211, 211, 211)"
       />
