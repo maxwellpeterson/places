@@ -1,45 +1,5 @@
 import React from "react"
 import styled from "styled-components/native"
-import { Text } from "react-native"
-
-const ArticleContainer = styled.View`
-  padding: 20px;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #f0f5f5;
-`
-const ArticleInfoContainer = styled.View`
-  flex-direction: column;
-  align-content: space-between;
-  border-radius: 8px;
-  background-color: #e0ebeb;
-  padding: 5px;
-`
-const ArticleTitleAndCategory = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-`
-const ArticleBodyContainer = styled.View`
-  flex-direction: column;
-  align-content: space-between;
-  padding-vertical: 10px;
-`
-const ArticleTitle = styled.Text`
-  font-size: 12px;
-  font-weight: bold;
-`
-const ArticleCategory = styled.Text`
-  font-size: 10px;
-`
-const ArticleUser = styled.Text`
-  font-size: 10px;
-`
-const ArticleDate = styled.Text`
-  font-size: 10px;
-`
-const ArticleBody = styled.Text`
-  font-size: 10px;
-`
 
 export default function ArticleBox({ user, title, date, category, body }) {
   return (
@@ -58,3 +18,48 @@ export default function ArticleBox({ user, title, date, category, body }) {
     </ArticleContainer>
   )
 }
+
+const ArticleContainer = styled.View`
+  padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #c2d6d6;
+  border-radius: 30px;
+  padding-vertical: 3px;
+  margin: 3px;
+`
+const ArticleInfoContainer = styled.View`
+  flex-direction: column;
+  align-content: space-between;
+  border-radius: 8px;
+  background-color: #e0ebeb;
+  padding: 5px;
+`
+const ArticleTitleAndCategory = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+`
+const ArticleBodyContainer = styled.View`
+  flex-direction: column;
+  align-content: space-between;
+  padding-vertical: 5px;
+`
+const ArticleTitle = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+`
+const ArticleCategory = styled.Text`
+  font-size: 12px;
+  font-weight: bold;
+  color: #486a6a;
+`
+const ArticleUser = styled.Text`
+  font-size: 12px;
+`
+const ArticleDate = styled.Text`
+  font-size: 12px;
+`
+const ArticleBody = styled.Text`
+  font-size: 12px;
+`

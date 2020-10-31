@@ -13,10 +13,10 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function NewButton() {
+export default function NewButton(title) {
   return (
     <ButtonContainer>
-      <Button title={"New"} />
+      <Button title={"NEW"} />
     </ButtonContainer>
   )
 }
