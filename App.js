@@ -1,6 +1,18 @@
 import React from "react"
-import ProfilePage from "./screens/profile"
+import styled from "styled-components/native"
+import { StatusBar } from "expo-status-bar"
+import Home from "./screens/home"
+import PlacePage from "./screens/place"
+
+const StyledSafeAreaView = styled.SafeAreaView`
+  flex: 1;
+`
 
 export default function App() {
-  return <ProfilePage></ProfilePage>
+  return (
+    <StyledSafeAreaView>
+      <Home />
+      <StatusBar style="auto" />
+    </StyledSafeAreaView>
+  )
 }
