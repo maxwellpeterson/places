@@ -12,30 +12,26 @@ const MenuContainer = styled.View`
   background-color: #fff;
 `
 
-export default function MenuPanel() {
-  const [isFollowingSelected, setIsFollowingSelected] = useState(true)
-  const [isLocalSelected, setIsLocalSelected] = useState(false)
-  const [isFromHomeSelected, setIsFromHomeSelected] = useState(false)
-
+export default function MenuPanel({ filters, toggleFilter }) {
   return (
     <MenuContainer>
       <MenuItem
         text={"Following"}
         color={FOLLOWING}
-        isSelected={isFollowingSelected}
-        onPress={() => setIsFollowingSelected(!isFollowingSelected)}
+        isSelected={filters.following}
+        onPress={() => toggleFilter("following")}
       />
       <MenuItem
         text={"Local"}
         color={LOCAL}
-        isSelected={isLocalSelected}
-        onPress={() => setIsLocalSelected(!isLocalSelected)}
+        isSelected={filters.local}
+        onPress={() => toggleFilter("local")}
       />
       <MenuItem
         text={"From Home"}
         color={FROM_HOME}
-        isSelected={isFromHomeSelected}
-        onPress={() => setIsFromHomeSelected(!isFromHomeSelected)}
+        isSelected={filters.fromHome}
+        onPress={() => toggleFilter("fromHome")}
       />
     </MenuContainer>
   )

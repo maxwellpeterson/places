@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components/native"
 import MapPanel from "../components/map/map-panel"
 import MenuPanel from "../components/home/menu-panel"
@@ -11,10 +11,23 @@ const MapContainer = styled.View`
 `
 
 export default function Home() {
+  const [filters, setFilters] = useState({
+    following: true,
+    local: false,
+    fromHome: false,
+  })
+
+  function toggleFilter(filter) {
+    setFilters({
+      ...filters,
+      [filter]: !filters[filter],
+    })
+  }
+
   return (
     <MapContainer>
-      <MapPanel markers={markers} />
-      <MenuPanel />
+      <MapPanel markers={markers.filter((marker) => filters[marker.type])} />
+      <MenuPanel filters={filters} toggleFilter={toggleFilter} />
     </MapContainer>
   )
 }
