@@ -2,6 +2,7 @@ import React from "react"
 import { Text, Dimensions } from "react-native"
 import { Marker, Callout } from "react-native-maps"
 import styled from "styled-components/native"
+import { MAP_COLORS } from "../../styles/colors"
 
 const CalloutContainer = styled.View`
   max-width: ${Dimensions.get("window").width / 2}px;
@@ -17,10 +18,10 @@ const TitleWrapper = styled.View`
   padding-bottom: 3px;
 `
 
-export default function MapMarker({ latlng, title, description }) {
+export default function MapMarker({ latlng, title, description, type }) {
   return (
-    <Marker coordinate={latlng}>
-      <Callout onPress={() => alert(`You selected ${title}!`)}>
+    <Marker coordinate={latlng} pinColor={MAP_COLORS[type]}>
+      <Callout onPress={() => console.log(`Navigate to page: ${title}`)}>
         <CalloutContainer>
           <TitleWrapper>
             <CalloutTitle>{title}</CalloutTitle>
