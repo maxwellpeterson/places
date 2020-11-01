@@ -12,27 +12,12 @@ const MenuContainer = styled.View`
   background-color: #fff;
 `
 
-export default function MenuPanel({ filters, toggleFilter }) {
+export default function MenuPanel({ items }) {
   return (
     <MenuContainer>
-      <MenuItem
-        text={"Following"}
-        color={FOLLOWING}
-        isSelected={filters.following}
-        onPress={() => toggleFilter("following")}
-      />
-      <MenuItem
-        text={"Local"}
-        color={LOCAL}
-        isSelected={filters.local}
-        onPress={() => toggleFilter("local")}
-      />
-      <MenuItem
-        text={"From Home"}
-        color={FROM_HOME}
-        isSelected={filters.fromHome}
-        onPress={() => toggleFilter("fromHome")}
-      />
+      {items.map((item) => (
+        <MenuItem key={item.text} {...item} />
+      ))}
     </MenuContainer>
   )
 }

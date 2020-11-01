@@ -12,9 +12,9 @@ const ItemLabel = styled.Text`
   font-size: 24px;
 `
 
-export default function MenuItem({ text, color, isSelected, onPress }) {
+export default function MenuItem({ text, color, isSelected, onToggle }) {
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={onToggle}>
       <ItemContainer>
         <RadioButton color={color} isSelected={isSelected} />
         <ItemLabel>{text}</ItemLabel>
