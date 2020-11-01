@@ -18,12 +18,14 @@ const MENU_TEXT = {
 }
 
 export default function Home() {
+  // There is probably a better state representation for this
   const [filters, setFilters] = useState({
     following: true,
     local: false,
     fromHome: false,
   })
 
+  // Toggle boolean value associated with the given filter
   function toggleFilter(filter) {
     setFilters({
       ...filters,
@@ -31,9 +33,10 @@ export default function Home() {
     })
   }
 
+  // Lambdadize this
   function buildMenuItem(key) {
     return {
-      text: MENU_TEXT[key],
+      text: MENU_TEXT[key], // change [key] to .key (??)
       color: MAP_COLORS[key],
       isSelected: filters[key],
       onToggle: () => toggleFilter(key),
@@ -44,7 +47,7 @@ export default function Home() {
     <MapContainer>
       <MapPanel markers={markers.filter((marker) => filters[marker.type])} />
       <MenuPanel
-        items={["following", "local", "fromHome"].map(buildMenuItem)}
+        items={["following", "local", "fromHome"].map(buildMenuItem)} // Define this array somewhere else?
       />
     </MapContainer>
   )
