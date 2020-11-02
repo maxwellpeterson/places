@@ -2,12 +2,13 @@ import React, { useState, useReducer, useMemo } from "react"
 import styled from "styled-components/native"
 import MapPanel from "../components/map/map-panel"
 import MenuPanel from "../components/home/menu-panel"
+import ProfileButton from "../components/home/profile-button"
 import { menu, menuDefaults, menuColors } from "../content/home"
 import { getMarkersWithinRegion } from "../requests/map-requests"
 
 const MapContainer = styled.View`
   flex: 1;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
 `
 
@@ -26,6 +27,7 @@ We also want to be able to handle an arbitrary number of filters...
 
 */
 
+// Define/calculate this somewhere else
 const defaultMapRegion = {
   latitude: 37.77090181921317,
   latitudeDelta: 0.20944657739749317,
@@ -70,6 +72,7 @@ export default function Home() {
         initialRegion={defaultMapRegion}
         onRegionChange={updateMapRegion}
       />
+      <ProfileButton />
       <MenuPanel items={menu.items.map(makeMenuItem)} />
     </MapContainer>
   )
