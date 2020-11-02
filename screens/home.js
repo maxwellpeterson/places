@@ -1,9 +1,9 @@
-import React, { useReducer } from "react"
+import React, { useState, useReducer, useMemo } from "react"
 import styled from "styled-components/native"
 import MapPanel from "../components/map/map-panel"
 import MenuPanel from "../components/home/menu-panel"
 import { menu, menuDefaults, menuColors } from "../content/home"
-import { markers } from "../test-data/home/map-markers"
+import { getMarkersWithinRegion } from "../requests/map-requests"
 
 const MapContainer = styled.View`
   flex: 1;
@@ -22,8 +22,16 @@ Filter state looks something like this:
 }
 
 Would it be more performant for each filter to be a separate state entry?
+We also want to be able to handle an arbitrary number of filters...
 
 */
+
+const defaultMapRegion = {
+  latitude: 37.77090181921317,
+  latitudeDelta: 0.20944657739749317,
+  longitude: -122.4506578747024,
+  longitudeDelta: 0.153573774239959,
+}
 
 export default function Home() {
   // Calling toggleFilter toggles the boolean state value associated with the given filter
@@ -35,6 +43,9 @@ export default function Home() {
     }),
     menuDefaults
   )
+
+  const [mapRegion, updateMapRegion] = useState(defaultMapRegion)
+  const markers = useMemo(() => getMarkersWithinRegion(mapRegion), [mapRegion])
 
   // Adds component defined information to a menu item, including information
   // about current state and callbacks
@@ -54,7 +65,11 @@ export default function Home() {
 
   return (
     <MapContainer>
-      <MapPanel markers={preprocessMarkers(markers)} />
+      <MapPanel
+        markers={preprocessMarkers(markers)}
+        initialRegion={defaultMapRegion}
+        onRegionChange={updateMapRegion}
+      />
       <MenuPanel items={menu.items.map(makeMenuItem)} />
     </MapContainer>
   )
