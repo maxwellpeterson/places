@@ -23,7 +23,7 @@ export const getMarkersWithinRegion = (region) => {
 
   const targetMarkers = markers.filter(isMarkerWithinRegion)
 
-  console.log(`${targetMarkers.length} markers in visible region`)
+  // console.log(`${targetMarkers.length} markers in visible region`)
 
   return targetMarkers
 }

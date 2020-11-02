@@ -20,7 +20,9 @@ const TitleWrapper = styled.View`
 export default function MapMarker({ latlng, title, description, color }) {
   return (
     <Marker coordinate={latlng} pinColor={color}>
-      <Callout onPress={() => console.log(`Navigate to page: ${title}`)}>
+      <Callout
+        onPress={() => console.log(`Navigate to place page for: ${title}`)}
+      >
         <CalloutContainer>
           <TitleWrapper>
             <CalloutTitle>{title}</CalloutTitle>

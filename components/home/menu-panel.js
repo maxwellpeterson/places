@@ -6,8 +6,8 @@ import MenuItem from "./menu-item"
 // Avoid leaky overlap with Apple Maps "legal" link in bottom right corner
 const MenuContainer = styled.View`
   padding: 10px;
-  margin: 9px;
-  border-radius: 9px;
+  border-radius: 7px;
+  margin: 10px;
   background-color: #fff;
 `
 
