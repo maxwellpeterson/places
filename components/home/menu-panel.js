@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import styled from "styled-components/native"
-import { FOLLOWING, LOCAL, FROM_HOME } from "../../styles/colors"
 import MenuItem from "./menu-item"
 
 // Apply box shadow, possibly some transparency and background blur as well
@@ -16,7 +15,7 @@ export default function MenuPanel({ items }) {
   return (
     <MenuContainer>
       {items.map((item) => (
-        <MenuItem key={item.text} {...item} />
+        <MenuItem key={item.id} {...item} />
       ))}
     </MenuContainer>
   )

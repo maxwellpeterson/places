@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React, { useReducer } from "react"
 import styled from "styled-components/native"
 import MapPanel from "../components/map/map-panel"
 import MenuPanel from "../components/home/menu-panel"
-import { MAP_COLORS } from "../styles/colors"
+import { menu, menuDefaults, menuColors } from "../content/home"
 import { markers } from "../test-data/home/map-markers"
 
 const MapContainer = styled.View`
@@ -11,44 +11,51 @@ const MapContainer = styled.View`
   align-items: flex-end;
 `
 
-const MENU_TEXT = {
-  following: "Following",
-  local: "Local",
-  fromHome: "From Home",
+/*
+
+Filter state looks something like this:
+
+{
+  following: true,
+  local: false,
+  fromHome: true,
 }
 
+Would it be more performant for each filter to be a separate state entry?
+
+*/
+
 export default function Home() {
-  // There is probably a better state representation for this
-  const [filters, setFilters] = useState({
-    following: true,
-    local: false,
-    fromHome: false,
+  // Calling toggleFilter toggles the boolean state value associated with the given filter
+  // For example, calling toggleFilter("following") toggles the state of the following filter
+  const [filters, toggleFilter] = useReducer(
+    (state, toToggle) => ({
+      ...state,
+      [toToggle]: !state[toToggle],
+    }),
+    menuDefaults
+  )
+
+  // Adds component defined information to a menu item, including information
+  // about current state and callbacks
+  const makeMenuItem = (item) => ({
+    ...item,
+    isSelected: filters[item.id],
+    onToggle: () => toggleFilter(item.id),
   })
 
-  // Toggle boolean value associated with the given filter
-  function toggleFilter(filter) {
-    setFilters({
-      ...filters,
-      [filter]: !filters[filter],
-    })
-  }
-
-  // Lambdadize this
-  function buildMenuItem(key) {
-    return {
-      text: MENU_TEXT[key], // change [key] to .key (??)
-      color: MAP_COLORS[key],
-      isSelected: filters[key],
-      onToggle: () => toggleFilter(key),
-    }
-  }
+  // Filters markers based on current menu filter selections, and adds locally
+  // defined information about color
+  // Definitely a better way to define/call this...
+  const preprocessMarkers = (markers) =>
+    markers
+      .filter((marker) => filters[marker.type])
+      .map((marker) => ({ ...marker, color: menuColors[marker.type] }))
 
   return (
     <MapContainer>
-      <MapPanel markers={markers.filter((marker) => filters[marker.type])} />
-      <MenuPanel
-        items={["following", "local", "fromHome"].map(buildMenuItem)} // Define this array somewhere else?
-      />
+      <MapPanel markers={preprocessMarkers(markers)} />
+      <MenuPanel items={menu.items.map(makeMenuItem)} />
     </MapContainer>
   )
 }

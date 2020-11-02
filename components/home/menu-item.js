@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Pressable } from "react-native"
 import styled from "styled-components/native"
 import RadioButton from "./radio-button"
@@ -12,12 +12,12 @@ const ItemLabel = styled.Text`
   font-size: 24px;
 `
 
-export default function MenuItem({ text, color, isSelected, onToggle }) {
+export default function MenuItem({ title, color, isSelected, onToggle }) {
   return (
     <Pressable onPress={onToggle}>
       <ItemContainer>
         <RadioButton color={color} isSelected={isSelected} />
-        <ItemLabel>{text}</ItemLabel>
+        <ItemLabel>{title}</ItemLabel>
       </ItemContainer>
     </Pressable>
   )
