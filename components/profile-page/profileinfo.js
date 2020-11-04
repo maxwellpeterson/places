@@ -1,6 +1,7 @@
 import React from "react"
 import { Dimensions } from "react-native"
 import styled from "styled-components/native"
+import ProfilePicture from "./profilepicture"
 
 const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height
@@ -31,6 +32,17 @@ const BioText = styled.Text`
   padding: 5px 8px 0px 0px;
 `
 
+const ProfPic = styled.Image`
+  width: 95px;
+  height: 95px;
+  background: #b3cee5;
+  border-radius: 47.5px;
+`
+
+const ImageContainer = styled.View`
+  padding: 5px 0px 0px 10px;
+`
+
 const ColumnLayout = styled.View`
   flex: 1;
   flex-direction: column;
@@ -53,6 +65,7 @@ export default function ProfileInfo({
   places,
   cities,
   bio,
+  profilePicture,
 }) {
   return (
     <ColumnLayout>

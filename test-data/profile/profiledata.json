@@ -5,7 +5,8 @@
 			"lastName": "kang",
 			"places": "37",
 			"cities": "7",
-			"bio": "add a bio here"
+			"bio": "add a bio here",
+			"profilePicture": "../../test-data/profile/profile-icon.jpg"
 		}
 	]
 }

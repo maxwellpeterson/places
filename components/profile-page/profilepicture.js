@@ -1,4 +1,5 @@
 import React from "react"
+import profileIcon from "../../test-data/profile/profile-icon.jpg"
 import styled from "styled-components/native"
 
 const ProfPic = styled.Image`
@@ -14,7 +15,7 @@ const ImageContainer = styled.View`
 export default function ProfilePicture() {
   return (
     <ImageContainer>
-      <ProfPic />
+      <ProfPic source={profileIcon} />
     </ImageContainer>
   )
 }
