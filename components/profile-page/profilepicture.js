@@ -14,7 +14,7 @@ const ImageContainer = styled.View`
 export default function ProfilePicture() {
   return (
     <ImageContainer>
-      <ProfPic source="https://i.pinimg.com/474x/4c/3e/3b/4c3e3b91f05a5765aa544ac7557d6642.jpg"></ProfPic>
+      <ProfPic />
     </ImageContainer>
   )
 }

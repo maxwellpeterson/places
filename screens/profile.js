@@ -1,11 +1,11 @@
 import React from "react"
-import BackButton from "../components/backbutton"
-import FollowButton from "../components/followbutton"
-import UsernameText from "../components/username"
+import BackButton from "../components/profile-page/backbutton"
+import FollowButton from "../components/profile-page/followbutton"
+import UsernameText from "../components/profile-page/username"
 import styled from "styled-components/native"
-import ProfilePicture from "../components/profilepicture"
-import AllProfileData from "../components/allprofiledata"
-import { profileData } from "../components/profiledata"
+import ProfilePicture from "../components/profile-page/profilepicture"
+import AllProfileData from "../components/profile-page/allprofiledata"
+import { profileData } from "../test-data/profile/profiledata"
 
 const Row = styled.View`
   display: flex;
