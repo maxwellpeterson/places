@@ -1,30 +1,64 @@
 import React from "react"
 import styled from "styled-components/native"
-import { Text } from "react-native"
 
 const ArticleContainer = styled.View`
-  flex: 1;
   padding: 20px;
-  height: 600px;
-
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #c2d6d6;
+  border-radius: 30px;
+  padding-vertical: 3px;
+  margin: 3px;
 `
 const ArticleInfoContainer = styled.View`
-  display: flex;
-  height: 30px;
   flex-direction: column;
   align-content: space-between;
+  border-radius: 8px;
+  background-color: #e0ebeb;
+  padding: 5px;
 `
-
-export default function ArticleBox({ user, date, category, body }) {
+const ArticleTitleAndCategory = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+`
+const ArticleBodyContainer = styled.View`
+  flex-direction: column;
+  align-content: space-between;
+  padding-vertical: 5px;
+`
+const ArticleTitle = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+`
+const ArticleCategory = styled.Text`
+  font-size: 12px;
+  font-weight: bold;
+  color: #486a6a;
+`
+const ArticleUser = styled.Text`
+  font-size: 12px;
+`
+const ArticleDate = styled.Text`
+  font-size: 12px;
+`
+const ArticleBody = styled.Text`
+  font-size: 12px;
+`
+export default function ArticleBox({ user, title, date, category, body }) {
   return (
     <ArticleContainer>
       <ArticleInfoContainer>
-        <Text>{user}</Text>
-        <Text>{category}</Text>
-        <Text>{date}</Text>
+        <ArticleTitleAndCategory>
+          <ArticleTitle>{title}</ArticleTitle>
+          <ArticleCategory>{category}</ArticleCategory>
+        </ArticleTitleAndCategory>
+        <ArticleUser>{user}</ArticleUser>
+        <ArticleDate>{date}</ArticleDate>
       </ArticleInfoContainer>
-      <Text>{body}</Text>
+      <ArticleBodyContainer>
+        <ArticleBody> {body} </ArticleBody>
+      </ArticleBodyContainer>
     </ArticleContainer>
   )
 }
