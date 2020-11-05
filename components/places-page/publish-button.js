@@ -13,10 +13,10 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function BackButton() {
+export default function PublishButton() {
   return (
     <ButtonContainer>
-      <Button title={"BACK"} />
+      <Button title={"PUBLISH"} />
     </ButtonContainer>
   )
 }

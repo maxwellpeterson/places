@@ -13,10 +13,10 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function BackButton() {
+export default function CancelButton() {
   return (
     <ButtonContainer>
-      <Button title={"BACK"} />
+      <Button title={"CANCEL"} />
     </ButtonContainer>
   )
 }
