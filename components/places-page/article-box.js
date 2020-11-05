@@ -1,24 +1,6 @@
 import React from "react"
 import styled from "styled-components/native"
 
-export default function ArticleBox({ user, title, date, category, body }) {
-  return (
-    <ArticleContainer>
-      <ArticleInfoContainer>
-        <ArticleTitleAndCategory>
-          <ArticleTitle>{title}</ArticleTitle>
-          <ArticleCategory>{category}</ArticleCategory>
-        </ArticleTitleAndCategory>
-        <ArticleUser>{user}</ArticleUser>
-        <ArticleDate>{date}</ArticleDate>
-      </ArticleInfoContainer>
-      <ArticleBodyContainer>
-        <ArticleBody> {body} </ArticleBody>
-      </ArticleBodyContainer>
-    </ArticleContainer>
-  )
-}
-
 const ArticleContainer = styled.View`
   padding: 20px;
   flex-direction: column;
@@ -63,3 +45,20 @@ const ArticleDate = styled.Text`
 const ArticleBody = styled.Text`
   font-size: 12px;
 `
+export default function ArticleBox({ user, title, date, category, body }) {
+  return (
+    <ArticleContainer>
+      <ArticleInfoContainer>
+        <ArticleTitleAndCategory>
+          <ArticleTitle>{title}</ArticleTitle>
+          <ArticleCategory>{category}</ArticleCategory>
+        </ArticleTitleAndCategory>
+        <ArticleUser>{user}</ArticleUser>
+        <ArticleDate>{date}</ArticleDate>
+      </ArticleInfoContainer>
+      <ArticleBodyContainer>
+        <ArticleBody> {body} </ArticleBody>
+      </ArticleBodyContainer>
+    </ArticleContainer>
+  )
+}

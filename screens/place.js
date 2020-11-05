@@ -22,14 +22,14 @@ const SectionContainer = styled.View`
   align-content: center;
   background-color: #f0f5f5;
 `
-export default function PlacePage() {
+export default function PlacePage({ navigation }) {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <SectionContainer>
         <PageHeader>
-          <BackButton />
+          <BackButton onPress={() => navigation.navigate("Home")} />
           <Title> Place </Title>
-          <NewButton />
+          <NewButton onPress={() => navigation.navigate("NewPost")} />
         </PageHeader>
         <AllArticles articles={articles} />
       </SectionContainer>
