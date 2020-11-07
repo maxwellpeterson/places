@@ -1,31 +1,30 @@
 import React from "react"
-import BackButton from "../components/profile-page/backbutton"
-import FollowButton from "../components/profile-page/followbutton"
-import UsernameText from "../components/profile-page/username"
+import { View } from "react-native"
 import styled from "styled-components/native"
+import profileData from "../test-data/profile/profiledata.json"
+import BackButton from "../components/profile-page/backbutton"
+import UsernameText from "../components/profile-page/username"
 import ProfilePicture from "../components/profile-page/profilepicture"
-import AllProfileData from "../components/profile-page/allprofiledata"
-import { profileData } from "../test-data/profile/profiledata"
+import BioText from "../components/profile-page/biotext"
+import ProfileInfo from "../components/profile-page/profileinfo"
 
 const Row = styled.View`
   display: flex;
   flex-direction: row;
 `
-const StyledSafeAreaView = styled.SafeAreaView`
-  flex: 1;
-`
+
 export default function ProfilePage() {
   return (
-    <StyledSafeAreaView>
+    <View>
       <Row>
-        <BackButton></BackButton>
-        <UsernameText></UsernameText>
+        <BackButton />
+        <UsernameText prop={profileData.username} />
       </Row>
       <Row>
-        <ProfilePicture></ProfilePicture>
-        <AllProfileData profileData={profileData} />
-        <FollowButton></FollowButton>
+        <ProfilePicture imageFile={profileData.profilePicture} />
+        <ProfileInfo profileData={profileData} />
       </Row>
-    </StyledSafeAreaView>
+      <BioText profileBio={profileData.bio} />
+    </View>
   )
 }

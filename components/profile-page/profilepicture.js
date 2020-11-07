@@ -12,7 +12,7 @@ const ImageContainer = styled.View`
   padding: 5px 0px 0px 10px;
 `
 
-export default function ProfilePicture() {
+export default function ProfilePicture({ imageFile }) {
   return (
     <ImageContainer>
       <ProfPic source={profileIcon} />

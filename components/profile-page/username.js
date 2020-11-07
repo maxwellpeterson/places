@@ -6,16 +6,18 @@ const windowWidth = Dimensions.get("window").width
 
 const ScreenContainer = styled.View`
   padding: 14px 0px 0px ${windowWidth / 8}px;
+  height: 50px;
 `
 const HeaderText = styled.Text`
   font-size: 25px;
   font-weight: bold;
+  text-align: center;
 `
 
-export default function UsernameText() {
+export default function UsernameText({ prop }) {
   return (
     <ScreenContainer>
-      <HeaderText>username</HeaderText>
+      <HeaderText>{prop}</HeaderText>
     </ScreenContainer>
   )
 }

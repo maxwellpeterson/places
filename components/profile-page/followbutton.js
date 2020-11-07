@@ -8,7 +8,7 @@ const CustomButton = (props) => (
 )
 
 const ScreenContainer = styled.View`
-  padding: 14px;
+  padding: 0px 0px 0px 15px;
   align-self: center;
 `
 
