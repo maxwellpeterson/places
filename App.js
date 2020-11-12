@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components/native"
 import { StatusBar } from "expo-status-bar"
 import Home from "./screens/home"
-import ProfilePage from "./screens/profile"
+import PlacePage from "./screens/place"
+import NewPost from "./screens/new-post"
 
 const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
@@ -11,7 +12,8 @@ const StyledSafeAreaView = styled.SafeAreaView`
 export default function App() {
   return (
     <StyledSafeAreaView>
-      <ProfilePage></ProfilePage>
+      <NewPost />
+      <StatusBar style="auto" />
     </StyledSafeAreaView>
   )
 }

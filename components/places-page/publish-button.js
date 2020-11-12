@@ -3,15 +3,20 @@ import { Button } from "react-native"
 import styled from "styled-components/native"
 
 const ButtonContainer = styled.View`
-  margin: 10px;
+  background-color: #b3cccc,
+  border-radius: 8px,
+  padding-vertical: 7px,
+  padding-horizontal: 14px,
+  width: 75px,
+  margin: 30px;
   border-radius: 5px;
   background-color: #fafafa;
 `
 
-export default function MenuButton() {
+export default function PublishButton() {
   return (
     <ButtonContainer>
-      <Button title={"Menu"} onPress={() => alert("You Opened the Menu!")} />
+      <Button title={"PUBLISH"} />
     </ButtonContainer>
   )
 }

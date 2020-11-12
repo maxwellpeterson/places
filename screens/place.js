@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { Text, View, ScrollView } from "react-native"
 import styled from "styled-components/native"
 import BackButton from "../components/places-page/back-button"
 import NewButton from "../components/places-page/new-post-button"
@@ -7,29 +7,32 @@ import AllArticles from "../components/places-page/all-articles"
 import { articles } from "../test-data/articles"
 
 const Title = styled.Text`
-  font-size: 36px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #486a6a;
 `
 const PageHeader = styled.View`
   display: flex;
-  height: 30px;
+  height: 100px;
   flex-direction: row;
-  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
 `
 const SectionContainer = styled.View`
-  flex: 1;
   align-content: center;
-  height: 200px;
+  background-color: #f0f5f5;
 `
-export default function PlacePage() {
+export default function PlacePage({ navigation }) {
   return (
-    <SectionContainer>
-      <PageHeader>
-        <BackButton />
-        <Title> Place! </Title>
-        <NewButton />
-      </PageHeader>
-
-      <AllArticles articles={articles} />
-    </SectionContainer>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <SectionContainer>
+        <PageHeader>
+          <BackButton onPress={() => navigation.navigate("Home")} />
+          <Title> Place </Title>
+          <NewButton onPress={() => navigation.navigate("NewPost")} />
+        </PageHeader>
+        <AllArticles articles={articles} />
+      </SectionContainer>
+    </ScrollView>
   )
 }
