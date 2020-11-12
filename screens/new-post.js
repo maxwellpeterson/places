@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import { Text, View, ScrollView, TextInput } from "react-native"
 import styled from "styled-components/native"
-import PublishButton from "../components/places-page/publish-button"
-import CancelButton from "../components/places-page/cancel-button"
-//import CategoriesMenu from "../components/place-page/categories"
+import PublishButton from "../components/new-post/publish-button"
+import CancelButton from "../components/new-post/cancel-button"
 
 const NewPostPart = styled.View`
   padding: 20px;
@@ -75,7 +74,7 @@ class NewPostClass extends React.Component {
   }
 }
 
-export default function NewPost() {
+export default function NewPost({ navigation }) {
   const [text1, text2, text3, setText] = useState("")
   return (
     <NewPostWholePage>
@@ -110,8 +109,8 @@ export default function NewPost() {
       </NewPostContainer>
 
       <PostButtons>
-        <CancelButton />
-        <PublishButton />
+        <CancelButton navigation={navigation} />
+        <PublishButton navigation={navigation} />
       </PostButtons>
     </NewPostWholePage>
   )

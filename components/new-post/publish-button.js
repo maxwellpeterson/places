@@ -13,10 +13,13 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function PublishButton() {
+export default function PublishButton({ onPress, navigation }) {
   return (
     <ButtonContainer>
-      <Button title={"PUBLISH"} />
+      <Button
+        title={"PUBLISH"}
+        onPress={() => navigation.navigate("PlacePage")}
+      />
     </ButtonContainer>
   )
 }
