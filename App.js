@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar"
 import Home from "./screens/home"
 import PlacePage from "./screens/place"
 import NewPost from "./screens/new-post"
-import Profile from "./screens/profile"
+import ProfilePage from "./screens/profile"
 import { NavigationContainer } from "@react-navigation/native"
 import "react-native-gesture-handler"
 import { ScreenStack } from "react-native-screens"
@@ -17,13 +17,19 @@ const Stack = createStackNavigator()
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="PlacePlage" component={PlacePage} />
-        <Stack.Screen name="NewPost" component={NewPost} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <StyledSafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Profile" component={ProfilePage} />
+          <Stack.Screen name="PlacePage" component={PlacePage} />
+          <Stack.Screen name="NewPost" component={NewPost} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </StyledSafeAreaView>
   )
 }

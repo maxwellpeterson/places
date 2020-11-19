@@ -68,8 +68,8 @@ export default function Home({ navigation }) {
   return (
     <MapContainer>
       <MapPanel
+        navigation={navigation}
         markers={preprocessMarkers(markers)}
-        initialRegion={defaultMapRegion}
         onRegionChange={updateMapRegion}
       />
       <ProfileButton navigation={navigation} />
