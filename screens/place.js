@@ -4,7 +4,7 @@ import styled from "styled-components/native"
 import BackButton from "../components/places-page/back-button"
 import NewButton from "../components/places-page/new-post-button"
 import AllArticles from "../components/places-page/all-articles"
-import { articles } from "../test-data/articles"
+import { articles } from "../test-data/place-page/articles"
 
 const Title = styled.Text`
   font-size: 30px;
@@ -27,9 +27,9 @@ export default function PlacePage({ navigation }) {
     <ScrollView showsVerticalScrollIndicator={false}>
       <SectionContainer>
         <PageHeader>
-          <BackButton onPress={() => navigation.navigate("Home")} />
+          <BackButton navigation={navigation} />
           <Title> Place </Title>
-          <NewButton onPress={() => navigation.navigate("NewPost")} />
+          <NewButton navigation={navigation} />
         </PageHeader>
         <AllArticles articles={articles} />
       </SectionContainer>

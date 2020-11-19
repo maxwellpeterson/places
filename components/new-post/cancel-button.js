@@ -13,10 +13,13 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function CancelButton() {
+export default function CancelButton({ onPress, navigation }) {
   return (
     <ButtonContainer>
-      <Button title={"CANCEL"} />
+      <Button
+        title={"CANCEL"}
+        onPress={() => navigation.navigate("PlacePage")}
+      />
     </ButtonContainer>
   )
 }

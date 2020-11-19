@@ -1,4 +1,5 @@
 import React from "react"
+import { Button, Pressable } from "react-native"
 import styled from "styled-components/native"
 
 const CustomButton = (props) => (
@@ -25,13 +26,15 @@ const ButtonText = styled.Text`
   color: ${(props) => props.textColor};
   text-align: center;
 `
-export default function BackButton() {
+export default function BackButton({ onPress, navigation }) {
   return (
     <ScreenContainer>
-      <CustomButton
-        text="BACK"
-        textColor="#fff"
+      <Button
+        //text="BACK"
+        title={"BACK"}
+        //textColor="#fff"
         backgroundColor="rgb(211, 211, 211)"
+        onPress={() => navigation.navigate("Home")}
       />
     </ScreenContainer>
   )

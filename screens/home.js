@@ -35,7 +35,7 @@ const defaultMapRegion = {
   longitudeDelta: 0.153573774239959,
 }
 
-export default function Home() {
+export default function Home({ navigation }) {
   // Calling toggleFilter toggles the boolean state value associated with the given filter
   // For example, calling toggleFilter("following") toggles the state of the following filter
   const [filters, toggleFilter] = useReducer(
@@ -68,11 +68,11 @@ export default function Home() {
   return (
     <MapContainer>
       <MapPanel
+        navigation={navigation}
         markers={preprocessMarkers(markers)}
-        initialRegion={defaultMapRegion}
         onRegionChange={updateMapRegion}
       />
-      <ProfileButton />
+      <ProfileButton navigation={navigation} />
       <MenuPanel items={menu.items.map(makeMenuItem)} />
     </MapContainer>
   )

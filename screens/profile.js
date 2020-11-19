@@ -13,11 +13,11 @@ const Row = styled.View`
   flex-direction: row;
 `
 
-export default function ProfilePage() {
+export default function ProfilePage({ navigation }) {
   return (
     <View>
       <Row>
-        <BackButton />
+        <BackButton navigation={navigation} />
         <UsernameText prop={profileData.username} />
       </Row>
       <Row>

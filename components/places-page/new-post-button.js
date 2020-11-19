@@ -13,10 +13,10 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function NewButton(title) {
+export default function NewButton({ onPress, navigation }) {
   return (
     <ButtonContainer>
-      <Button title={"NEW"} />
+      <Button title={"NEW"} onPress={() => navigation.navigate("NewPost")} />
     </ButtonContainer>
   )
 }
