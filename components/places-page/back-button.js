@@ -13,10 +13,10 @@ const ButtonContainer = styled.View`
   background-color: #fafafa;
 `
 
-export default function BackButton() {
+export default function BackButton({ onPress, navigation }) {
   return (
     <ButtonContainer>
-      <Button title={"BACK"} />
+      <Button title={"BACK"} onPress={() => navigation.navigate("Home")} />
     </ButtonContainer>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import { Pressable } from "react-native"
+import { Button, Pressable } from "react-native"
 import styled from "styled-components/native"
 
 const ButtonContainer = styled.View`
@@ -18,12 +18,10 @@ const ButtonText = styled.Text`
 
 const text = "M"
 
-export default function ProfileButton() {
+export default function ProfileButton({ onPress, navigation }) {
   return (
-    <Pressable onPress={() => console.log(`Navigate to profile page`)}>
-      <ButtonContainer>
-        <ButtonText>{text}</ButtonText>
-      </ButtonContainer>
-    </Pressable>
+    <ButtonContainer>
+      <Button title={text} onPress={() => navigation.navigate("Profile")} />
+    </ButtonContainer>
   )
 }
