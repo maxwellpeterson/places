@@ -57,23 +57,23 @@ export default function ProfilePage({ navigation }) {
 
   return (
     <ColumnLayout>
+      <ProfileBalance>
+        <Row>
+          <BackButton navigation={navigation} />
+          <UsernameText prop={profileData.username} />
+        </Row>
+        <Row>
+          <ProfilePicture imageFile={profileData.profilePicture} />
+          <ProfileInfo profileData={profileData} />
+        </Row>
+        <BioText profileBio={profileData.bio} />
+      </ProfileBalance>
       <MapContainer>
         <MapPanel
           markers={preprocessMarkers(markers)}
           initialRegion={defaultMapRegion}
           onRegionChange={updateMapRegion}
         />
-        <ProfileBalance>
-          <Row>
-            <BackButton navigation={navigation} />
-            <UsernameText prop={profileData.username} />
-          </Row>
-          <Row>
-            <ProfilePicture imageFile={profileData.profilePicture} />
-            <ProfileInfo profileData={profileData} />
-          </Row>
-          <BioText profileBio={profileData.bio} />
-        </ProfileBalance>
       </MapContainer>
     </ColumnLayout>
   )
