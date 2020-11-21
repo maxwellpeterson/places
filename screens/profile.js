@@ -38,7 +38,7 @@ const defaultMapRegion = {
   longitudeDelta: 0.153573774239959,
 }
 
-export default function ProfilePage() {
+export default function ProfilePage({ navigation }) {
   const [filters, toggleFilter] = useReducer(
     (state, toToggle) => ({
       ...state,
@@ -65,7 +65,7 @@ export default function ProfilePage() {
         />
         <ProfileBalance>
           <Row>
-            <BackButton />
+            <BackButton navigation={navigation} />
             <UsernameText prop={profileData.username} />
           </Row>
           <Row>
