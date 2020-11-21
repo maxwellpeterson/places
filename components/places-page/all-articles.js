@@ -6,7 +6,7 @@ export default function AllArticles({ articles }) {
   return (
     <View>
       {articles.map((article) => (
-        <ArticleBox {...article} />
+        <ArticleBox key={article.title} {...article} />
       ))}
     </View>
   )
