@@ -3,6 +3,7 @@ import styled from "styled-components/native"
 import { StatusBar } from "expo-status-bar"
 import Home from "./screens/home"
 import PlacePage from "./screens/place"
+import ProfilePage from "./screens/profile"
 import NewPost from "./screens/new-post"
 
 const StyledSafeAreaView = styled.SafeAreaView`
@@ -12,8 +13,7 @@ const StyledSafeAreaView = styled.SafeAreaView`
 export default function App() {
   return (
     <StyledSafeAreaView>
-      <NewPost />
-      <StatusBar style="auto" />
+      <ProfilePage></ProfilePage>
     </StyledSafeAreaView>
   )
 }
