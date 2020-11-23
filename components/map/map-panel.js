@@ -5,12 +5,7 @@ import MapMarker from "./map-marker"
 
 // Need to figure out how to control the size of the map, not sure if it can be styled like a normal view
 
-export default function MapPanel({
-  markers,
-  initialRegion,
-  onRegionChange,
-  navigation,
-}) {
+export default function MapPanel({ markers, initialRegion, onRegionChange }) {
   return (
     <MapView
       style={{ ...StyleSheet.absoluteFillObject }}
@@ -18,7 +13,7 @@ export default function MapPanel({
       onRegionChangeComplete={onRegionChange}
     >
       {markers.map((marker) => (
-        <MapMarker key={marker.title} navigation={navigation} {...marker} />
+        <MapMarker key={marker.title} {...marker} />
       ))}
     </MapView>
   )

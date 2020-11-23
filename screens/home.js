@@ -58,18 +58,23 @@ export default function Home({ navigation }) {
   })
 
   // Filters markers based on current menu filter selections, and adds locally
-  // defined information about color
+  // defined information about color and navigation routing
   // Definitely a better way to define/call this...
   const preprocessMarkers = (markers) =>
     markers
       .filter((marker) => filters[marker.type])
-      .map((marker) => ({ ...marker, color: menuColors[marker.type] }))
+      .map((marker) => ({
+        ...marker,
+        color: menuColors[marker.type],
+        onPress: () =>
+          navigation.navigate("PlacePage", { title: marker.title }),
+      }))
 
   return (
     <MapContainer>
       <MapPanel
-        navigation={navigation}
         markers={preprocessMarkers(markers)}
+        initialRegion={defaultMapRegion}
         onRegionChange={updateMapRegion}
       />
       <ProfileButton onPress={() => navigation.navigate("Profile")} />

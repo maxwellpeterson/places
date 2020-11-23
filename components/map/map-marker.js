@@ -23,11 +23,10 @@ export default function MapMarker({
   description,
   color,
   onPress,
-  navigation,
 }) {
   return (
     <Marker coordinate={latlng} pinColor={color}>
-      <Callout onPress={() => navigation.navigate("PlacePage")}>
+      <Callout onPress={onPress}>
         <CalloutContainer>
           <TitleWrapper>
             <CalloutTitle>{title}</CalloutTitle>
