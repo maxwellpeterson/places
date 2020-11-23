@@ -21,20 +21,16 @@ export const menu = {
   ],
 }
 
-// Better way to define these convenience exports...
+// Creates an object mapping the id of each menu item to its field value for
+// the given field name
+const pivot = (field) =>
+  menu.items.reduce(
+    (obj, item) => ({
+      ...obj,
+      [item.id]: item[field],
+    }),
+    {}
+  )
 
-export const menuDefaults = menu.items.reduce(
-  (obj, item) => ({
-    ...obj,
-    [item.id]: item.default,
-  }),
-  {}
-)
-
-export const menuColors = menu.items.reduce(
-  (obj, item) => ({
-    ...obj,
-    [item.id]: item.color,
-  }),
-  {}
-)
+export const menuDefaults = pivot("default")
+export const menuColors = pivot("color")
