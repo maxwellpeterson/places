@@ -16,12 +16,14 @@ const ButtonText = styled.Text`
   font-size: 32px;
 `
 
-const text = "M"
+const text = "J"
 
-export default function ProfileButton({ onPress, navigation }) {
+export default function ProfileButton({ onPress }) {
   return (
-    <ButtonContainer>
-      <Button title={text} onPress={() => navigation.navigate("Profile")} />
-    </ButtonContainer>
+    <Pressable onPress={onPress}>
+      <ButtonContainer>
+        <ButtonText>{text}</ButtonText>
+      </ButtonContainer>
+    </Pressable>
   )
 }

@@ -72,7 +72,7 @@ export default function Home({ navigation }) {
         markers={preprocessMarkers(markers)}
         onRegionChange={updateMapRegion}
       />
-      <ProfileButton navigation={navigation} />
+      <ProfileButton onPress={() => navigation.navigate("Profile")} />
       <MenuPanel items={menu.items.map(makeMenuItem)} />
     </MapContainer>
   )
