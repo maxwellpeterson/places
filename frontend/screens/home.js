@@ -3,7 +3,12 @@ import styled from "styled-components/native"
 import MapPanel from "../components/map/map-panel"
 import MenuPanel from "../components/home/menu-panel"
 import ProfileButton from "../components/home/profile-button"
-import { menu, menuDefaults, menuColors } from "../content/home"
+import {
+  menuContent,
+  initialMenuSelections,
+  menuColors,
+  initialMapRegion,
+} from "../content/home"
 import { getMarkersWithinRegion } from "../requests/map-requests"
 
 const MapContainer = styled.View`
@@ -59,14 +64,6 @@ selected, and that shouldn't actually be shown on the map. It looks like this:
 
 */
 
-// Define/calculate this somewhere else (home content file?)
-const defaultMapRegion = {
-  latitude: 37.77090181921317,
-  latitudeDelta: 0.20944657739749317,
-  longitude: -122.4506578747024,
-  longitudeDelta: 0.153573774239959,
-}
-
 export default function Home({ navigation }) {
   // Calling toggleFilter toggles the boolean state value associated with the given filter
   // For example, calling toggleFilter("following") toggles the state of the following filter
@@ -75,13 +72,13 @@ export default function Home({ navigation }) {
       ...state,
       [toToggle]: !state[toToggle],
     }),
-    menuDefaults
+    initialMenuSelections
   )
 
   // Keeps track of the visible region of the map as a user moves around
-  const [mapRegion, updateMapRegion] = useState(defaultMapRegion)
+  const [mapRegion, updateMapRegion] = useState(initialMapRegion)
 
-  // Updates the markers to display when a user finishes a map movement
+  // Updates the visible markers when a user finishes a map movement
   const markers = useMemo(() => getMarkersWithinRegion(mapRegion), [mapRegion])
 
   // Adds component defined information to a menu item object, including
@@ -108,11 +105,11 @@ export default function Home({ navigation }) {
     <MapContainer>
       <MapPanel
         markers={markers.filter(isActiveMarker).map(makeMarker)}
-        initialRegion={defaultMapRegion}
+        initialRegion={initialMapRegion}
         onRegionChange={updateMapRegion}
       />
       <ProfileButton onPress={() => navigation.navigate("Profile")} />
-      <MenuPanel items={menu.items.map(makeMenuItem)} />
+      <MenuPanel items={menuContent.items.map(makeMenuItem)} />
     </MapContainer>
   )
 }

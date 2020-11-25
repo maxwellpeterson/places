@@ -1,6 +1,7 @@
 import React from "react"
-import { Button, Pressable } from "react-native"
+import { Pressable } from "react-native"
 import styled from "styled-components/native"
+import { profileButtonText } from "../../content/home"
 
 const ButtonContainer = styled.View`
   width: 64px;
@@ -16,13 +17,11 @@ const ButtonText = styled.Text`
   font-size: 32px;
 `
 
-const text = "J"
-
 export default function ProfileButton({ onPress }) {
   return (
     <Pressable onPress={onPress}>
       <ButtonContainer>
-        <ButtonText>{text}</ButtonText>
+        <ButtonText>{profileButtonText}</ButtonText>
       </ButtonContainer>
     </Pressable>
   )
