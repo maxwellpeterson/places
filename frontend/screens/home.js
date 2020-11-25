@@ -46,34 +46,36 @@ export default function Home({ navigation }) {
     menuDefaults
   )
 
+  // Keeps track of the visible region of the map as a user moves around
   const [mapRegion, updateMapRegion] = useState(defaultMapRegion)
+
+  // Updates the markers to display when a user finishes a map movement
   const markers = useMemo(() => getMarkersWithinRegion(mapRegion), [mapRegion])
 
-  // Adds component defined information to a menu item, including information
-  // about current state and callbacks
+  // Adds component defined information to a menu item object, including
+  // information about current state and callbacks
   const makeMenuItem = (item) => ({
     ...item,
     isSelected: filters[item.id],
     onToggle: () => toggleFilter(item.id),
   })
 
-  // Filters markers based on current menu filter selections, and adds locally
-  // defined information about color and navigation routing
-  // Definitely a better way to define/call this...
-  const preprocessMarkers = (markers) =>
-    markers
-      .filter((marker) => filters[marker.type])
-      .map((marker) => ({
-        ...marker,
-        color: menuColors[marker.type],
-        onPress: () =>
-          navigation.navigate("PlacePage", { title: marker.title }),
-      }))
+  // Checks if a marker should be displayed on the map, based on whether
+  // its menu category is currently selected
+  const isActiveMarker = (marker) => filters[marker.type]
+
+  // Adds locally defined information to a marker object, including
+  // information about color and navigation routing
+  const makeMarker = (marker) => ({
+    ...marker,
+    color: menuColors[marker.type],
+    onPress: () => navigation.navigate("PlacePage", { title: marker.title }),
+  })
 
   return (
     <MapContainer>
       <MapPanel
-        markers={preprocessMarkers(markers)}
+        markers={markers.filter(isActiveMarker).map(makeMarker)}
         initialRegion={defaultMapRegion}
         onRegionChange={updateMapRegion}
       />
