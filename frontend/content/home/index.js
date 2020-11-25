@@ -21,8 +21,8 @@ export const menu = {
   ],
 }
 
-// Creates an object mapping the id of each menu item to its field value for
-// the given field name
+// Creates a new  object mapping the id of each menu item to its field value
+// for the given field name.
 const pivot = (field) =>
   menu.items.reduce(
     (obj, item) => ({

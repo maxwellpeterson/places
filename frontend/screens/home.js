@@ -14,20 +14,52 @@ const MapContainer = styled.View`
 
 /*
 
-Filter state looks something like this:
+There are three pieces of state here:
 
+Filter state keeps track of the menu filters that are currently selected. It 
+looks like this:
 {
   following: true,
   local: false,
-  fromHome: true,
+  fromHome: true
 }
 
-Would it be more performant for each filter to be a separate state entry?
-We also want to be able to handle an arbitrary number of filters...
+Map region state keeps track of the region of the map currently visible on
+screen. It looks like this:
+{
+  latitude: 37.77,
+  latitudeDelta: 0.20,
+  longitude: -122.45,
+  longitudeDelta: 0.15
+}
+
+Marker state keeps track of the markers that fall within the current map
+region. Note that this may include markers whose menu category is not currently
+selected, and that shouldn't actually be shown on the map. It looks like this:
+[
+  {
+    "latlng": {
+      "latitude": 37.84,
+      "longitude": -122.48
+    },
+    "title": "Place One",
+    "description": "This is Place One.",
+    "type": "following"
+  },
+  {
+    "latlng": {
+      "latitude": 37.76,
+      "longitude": -122.44
+    },
+    "title": "Place Two",
+    "description": "This is Place Two.",
+    "type": "local"
+  }
+]
 
 */
 
-// Define/calculate this somewhere else
+// Define/calculate this somewhere else (home content file?)
 const defaultMapRegion = {
   latitude: 37.77090181921317,
   latitudeDelta: 0.20944657739749317,
