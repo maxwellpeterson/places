@@ -64,3 +64,6 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# Firebase permissions (better solution for this)
+permissions.json
