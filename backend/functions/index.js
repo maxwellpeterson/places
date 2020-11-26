@@ -2,7 +2,7 @@ const functions = require("firebase-functions")
 const admin = require("firebase-admin")
 const express = require("express")
 const cors = require("cors")
-import geohash from "ngeohash"
+var geohash = require("ngeohash")
 
 var serviceAccount = require("./permissions.json")
 
@@ -34,13 +34,15 @@ app.post("/api/create", async (req, res) => {
   }
 })
 
+// Covert a given pair of geographical coordinates to the corresponding
+// pair of geohashes
 const regionToHash = ({ minlat, minlng, maxlat, maxlng }) => ({
   minHash: geohash.encode(minlat, minlng),
   maxHash: geohash.encode(maxlat, maxlng),
 })
 
 app.get(
-  "/api/places/withinregion/southWest@:minlat,:minlng&northEast@:maxlat,:maxlng",
+  "/api/places/withinregion/:minlat,:minlng&:maxlat,:maxlng",
   async (req, res) => {
     try {
       const { minHash, maxHash } = regionToHash(req.params)
@@ -49,7 +51,7 @@ app.get(
         .where("geohash", ">=", minHash)
         .where("geohash", "<=", maxHash)
       const snapshot = await query.get()
-      // Process results
+      snapshot.forEach((doc) => console.log(doc.id, "=>", doc.data()))
       return res.status(200).send()
     } catch (error) {
       console.log(error)
